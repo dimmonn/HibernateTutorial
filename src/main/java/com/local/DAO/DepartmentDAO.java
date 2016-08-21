@@ -11,7 +11,7 @@ public interface DepartmentDAO {
 	public void editDepartment(Department department);
 
 	public void deleteDepartment(Integer department);
-
+ 
 	public Department getDepartmentById(Integer department_id);
 
 	public List<Department> getAllDepartments();

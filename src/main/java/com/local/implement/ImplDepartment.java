@@ -44,7 +44,6 @@ public class ImplDepartment implements DepartmentDAO {
 	public Department getDepartmentById(Integer id) {
 		Session session = sessionFactory.getCurrentSession();
 		Department department = (Department) session.load(Department.class, id);
-		System.out.println(department);
 		return department;
 	}
 

@@ -18,14 +18,12 @@ public class ImplDepartmentTest {
         int c = 0;
         DepartmentManagerImpl dept = AppContextHolder.getBean("departmentManagerImpl");
         int current = dept.getAllDepartments().size();
-        System.out.println(current);
         for (int i = 0; i < 1000; i++) {
             Department department = new Department();
             int random = 50 + new Random().nextInt(1000);
             department.setCaption("dept" + String.valueOf(random));
             dept.addDepartment(department);
             c = i;
-            System.out.println(i);
         }
         assertEquals(c + current, dept.getAllDepartments().size() - 1);
     }
