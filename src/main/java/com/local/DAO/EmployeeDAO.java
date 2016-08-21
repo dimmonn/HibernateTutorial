@@ -1,9 +1,9 @@
 package com.local.DAO;
 
-import com.local.logic.Employee;
-
 import java.util.List;
 import java.util.Set;
+
+import com.local.entity.Employee;
 
 public interface EmployeeDAO {
 

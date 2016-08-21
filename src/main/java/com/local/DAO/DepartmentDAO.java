@@ -1,8 +1,9 @@
 package com.local.DAO;
 
-import com.local.logic.Department;
-import com.local.logic.Employee;
 import java.util.List;
+
+import com.local.entity.Department;
+import com.local.entity.Employee;
 
 public interface DepartmentDAO {
 

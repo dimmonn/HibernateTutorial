@@ -7,8 +7,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.local.DAO.DepartmentDAO;
-import com.local.logic.Department;
-import com.local.logic.Employee;
+import com.local.entity.Department;
+import com.local.entity.Employee;
+
 import org.springframework.transaction.annotation.Transactional;
 
 @Service

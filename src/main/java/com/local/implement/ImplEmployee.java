@@ -1,8 +1,9 @@
 package com.local.implement;
 
 import com.local.DAO.EmployeeDAO;
-import com.local.logic.Department;
-import com.local.logic.Employee;
+import com.local.entity.Department;
+import com.local.entity.Employee;
+
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.criterion.Restrictions;

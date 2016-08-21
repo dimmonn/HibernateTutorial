@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.local.DAO.EmployeeDAO;
-import com.local.logic.Employee;
+import com.local.entity.Employee;
 
 @Service
 @Transactional
