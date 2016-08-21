@@ -21,22 +21,25 @@ public class ImplDepartment implements DepartmentDAO {
 	}
 
 	@Override
-	public void addDepartment(Department department) {
+	public int addDepartment(Department department) {
 		Session session = sessionFactory.getCurrentSession();
 		session.save(department);
+		return department.getDepartmentId();
 	}
 
 	@Override
-	public void editDepartment(Department department) {
+	public int editDepartment(Department department) {
 		Session session = sessionFactory.getCurrentSession();
 		session.update(department);
+		return department.getDepartmentId();
 	}
 
 	@Override
-	public void deleteDepartment(Integer id) {
+	public int deleteDepartment(Integer id) {
 		Session session = sessionFactory.getCurrentSession();
 		Department department = (Department) session.load(Department.class, id);
 		session.delete(department);
+		return department.getDepartmentId();
 
 	}
 
@@ -54,12 +57,13 @@ public class ImplDepartment implements DepartmentDAO {
 	}
 
 	@Override
-	public void addEmployee(Department department, Employee employee) {
+	public int addEmployee(Department department, Employee employee) {
 		Session session = sessionFactory.getCurrentSession();
 		department.getEmployees().add(employee);
 		employee.setDepartment(department);
 		session.saveOrUpdate(department);
 		session.saveOrUpdate(employee);
+		return employee.getEmployeeId();
 	}
 
 }
