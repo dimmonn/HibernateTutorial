@@ -27,7 +27,6 @@ public class EmployeeManagerImpl {
 
     public void deleteEmployeesByName(String name) {
         employeeDAO.deleteEmployeesByName(name);
-
     }
 
     public Set<Employee> getEmployeesByDepartment(Integer department) {
