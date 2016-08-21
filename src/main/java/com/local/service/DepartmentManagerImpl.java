@@ -26,25 +26,25 @@ public class DepartmentManagerImpl {
         this.departmentDAO = departmentDAO;
     }
 
-    public void addDepartment(Department department) {
-        departmentDAO.addDepartment(department);
+    public int addDepartment(Department department) {
+        return departmentDAO.addDepartment(department);
 
     }
 
-    public void editDepartment(Department department) {
-        departmentDAO.editDepartment(department);
+    public int editDepartment(Department department) {
+        return departmentDAO.editDepartment(department);
     }
 
-    public void deleteDepartment(Integer department) {
-        departmentDAO.deleteDepartment(department);
+    public int deleteDepartment(Integer department) {
+        return departmentDAO.deleteDepartment(department);
     }
 
     public Department getDepartmentById(Integer department_id) {
         return departmentDAO.getDepartmentById(department_id);
     }
 
-    public void addEmployee(Department department, Employee employee) {
-        departmentDAO.addEmployee(department, employee);
+    public int addEmployee(Department department, Employee employee) {
+        return departmentDAO.addEmployee(department, employee);
     }
 
 }

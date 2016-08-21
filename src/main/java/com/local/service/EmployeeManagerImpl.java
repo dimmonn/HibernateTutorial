@@ -1,5 +1,6 @@
 package com.local.service;
 
+import java.util.List;
 import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,13 +21,13 @@ public class EmployeeManagerImpl {
         this.employeeDAO = employeeDAO;
     }
 
-    public void editEmployee(Employee employee) {
-        employeeDAO.editEmployee(employee);
+    public int editEmployee(Employee employee) {
+        return employeeDAO.editEmployee(employee);
 
     }
 
-    public void deleteEmployeesByName(String name) {
-        employeeDAO.deleteEmployeesByName(name);
+    public List<Integer> deleteEmployeesByName(String name) {
+        return employeeDAO.deleteEmployeesByName(name);
     }
 
     public Set<Employee> getEmployeesByDepartment(Integer department) {
