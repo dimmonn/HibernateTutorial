@@ -13,7 +13,6 @@ import java.util.*;
 
 @Repository
 public class ImplDepartment implements DepartmentDAO {
-
 	private SessionFactory sessionFactory;
 
 	@Autowired

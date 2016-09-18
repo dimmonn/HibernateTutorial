@@ -12,26 +12,29 @@ import com.local.entity.Employee;
 
 @Service
 @Transactional
-public class EmployeeManagerImpl {
+public class EmployeeServiceImpl {
 
-    private EmployeeDAO employeeDAO;
+	private EmployeeDAO employeeDAO;
 
-    @Autowired
-    public void setEmployeeDAO(EmployeeDAO employeeDAO) {
-        this.employeeDAO = employeeDAO;
-    }
+	@Autowired
+	public void setEmployeeDAO(EmployeeDAO employeeDAO) {
+		this.employeeDAO = employeeDAO;
+	}
 
-    public int editEmployee(Employee employee) {
-        return employeeDAO.editEmployee(employee);
+	
+	public int editEmployee(Employee employee) {
+		return employeeDAO.editEmployee(employee);
 
-    }
+	}
 
-    public List<Integer> deleteEmployeesByName(String name) {
-        return employeeDAO.deleteEmployeesByName(name);
-    }
+	
+	public List<Integer> deleteEmployeesByName(String name) {
+		return employeeDAO.deleteEmployeesByName(name);
+	}
 
-    public Set<Employee> getEmployeesByDepartment(Integer department) {
-        return employeeDAO.getEmployeesByDepartment(department);
-    }
+	
+	public Set<Employee> getEmployeesByDepartment(Integer department) {
+		return employeeDAO.getEmployeesByDepartment(department);
+	}
 
 }

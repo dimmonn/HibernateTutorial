@@ -61,38 +61,26 @@ public class Cli {
 				Department department = modifyDept(cmd);
 				log.log(Level.INFO, "Dept " + department + " is modified");
 			} else if (cmd.hasOption("rm")) {
-				DepartmentServiceImpl departmentService = AppContextHolder.getBean("departmentServiceImpl");
-				departmentService.deleteDepartment(Integer.parseInt(cmd.getOptionValue("rm")));
+				DepartmentServiceImpl departmentService = deleteDept(cmd);
 				log.log(Level.INFO,
 						"Dept " + departmentService.getDepartmentById(Integer.parseInt(cmd.getOptionValue("rm")))
 								+ " is removed");
 			} else if (cmd.hasOption("sh")) {
-				DepartmentServiceImpl departmentService = AppContextHolder.getBean("departmentServiceImpl");
-				List<Department> departments = departmentService.getAllDepartments();
+				List<Department> departments = getAllDepts();
 				log.log(Level.INFO, departments.toString());
 			} else if (cmd.hasOption("fn")) {
-				DepartmentServiceImpl departmentService = AppContextHolder.getBean("departmentServiceImpl");
-				Department department = departmentService.getDepartmentById(Integer.parseInt(cmd.getOptionValue("fn")));
+				Department department = findDept(cmd);
 				log.log(Level.INFO, department.toString());
 			} else if (cmd.hasOption("ae")) {
-				DepartmentServiceImpl departmentService = AppContextHolder.getBean("departmentServiceImpl");
-				Department department = departmentService
-						.getDepartmentById(Integer.parseInt(cmd.getOptionValues("ae")[0]));
-				Employee employee = new Employee();
-				employee.setFio(cmd.getOptionValues("ae")[1]);
-				departmentService.addEmployee(department, employee);
-				log.log(Level.INFO, employee + " is added to the dept " + department);
+				Department department = addEmployeeToDept(cmd);
+				log.log(Level.INFO, "Added employee to dept " + department);
 			} else if (cmd.hasOption("fe")) {
-				EmployeeServiceImpl employeeService = AppContextHolder.getBean("employeeServiceImpl");
-				Set<Employee> employees = employeeService
-						.getEmployeesByDepartment(Integer.parseInt(cmd.getOptionValue("fe")));
+				Set<Employee> employees = getEmployeeByDept(cmd);
 				log.log(Level.INFO, "Employees with dept id " + cmd.getOptionValue("fe") + " are " + employees);
 			} else if (cmd.hasOption("re")) {
-				EmployeeServiceImpl employeeService = AppContextHolder.getBean("employeeServiceImpl");
-				employeeService.deleteEmployeesByName(cmd.getOptionValue("re"));
+				deleteEmployeeByName(cmd);
 				log.log(Level.INFO, "employee with name " + cmd.getOptionValue("re") + " is removed");
-			}
-			else {
+			} else {
 				log.log(Level.SEVERE, "MIssing v option");
 				help();
 			}
@@ -101,6 +89,44 @@ public class Cli {
 			log.log(Level.SEVERE, "Failed to parse comand line properties", e);
 			help();
 		}
+	}
+
+	private Department addEmployeeToDept(CommandLine cmd) {
+		Employee employee = new Employee();
+		DepartmentServiceImpl departmentService = AppContextHolder.getBean("departmentServiceImpl");
+		Department department = departmentService.getDepartmentById(Integer.parseInt(cmd.getOptionValues("ae")[0]));
+		employee.setFio(cmd.getOptionValues("ae")[1]);
+		departmentService.addEmployee(department, employee);
+		return department;
+	}
+
+	private void deleteEmployeeByName(CommandLine cmd) {
+		EmployeeServiceImpl employeeService = AppContextHolder.getBean("employeeServiceImpl");
+		employeeService.deleteEmployeesByName(cmd.getOptionValue("re"));
+	}
+
+	private Set<Employee> getEmployeeByDept(CommandLine cmd) {
+		EmployeeServiceImpl employeeService = AppContextHolder.getBean("employeeServiceImpl");
+		Set<Employee> employees = employeeService.getEmployeesByDepartment(Integer.parseInt(cmd.getOptionValue("fe")));
+		return employees;
+	}
+
+	private Department findDept(CommandLine cmd) {
+		DepartmentServiceImpl departmentService = AppContextHolder.getBean("departmentServiceImpl");
+		Department department = departmentService.getDepartmentById(Integer.parseInt(cmd.getOptionValue("fn")));
+		return department;
+	}
+
+	private List<Department> getAllDepts() {
+		DepartmentServiceImpl departmentService = AppContextHolder.getBean("departmentServiceImpl");
+		List<Department> departments = departmentService.getAllDepartments();
+		return departments;
+	}
+
+	private DepartmentServiceImpl deleteDept(CommandLine cmd) {
+		DepartmentServiceImpl departmentService = AppContextHolder.getBean("departmentServiceImpl");
+		departmentService.deleteDepartment(Integer.parseInt(cmd.getOptionValue("rm")));
+		return departmentService;
 	}
 
 	private Department modifyDept(CommandLine cmd) {
