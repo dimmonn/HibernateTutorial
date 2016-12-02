@@ -1,3 +1,2 @@
 # hiber
-correcting mistakes for https://habrahabr.ru/post/305418/
-Hibernate Simple Tutorial
+Hibernate Simple Tutorial using spring transactions
