@@ -1,4 +1,4 @@
-# hiber
+# Hibernate Simple Tutorial
 Hibernate Simple Tutorial using spring transactions
 
 # Installation
