@@ -27,17 +27,18 @@ public class Cli {
 	public Cli(String[] args) {
 
 		this.args = args;
-		Option ed = new Option("ed", "editDept", true, "Edit an existing dept");
+		Option ed = new Option("ed", "editDept", true, "Edit an existing dept (ex. -ed \"department id\")");
 		ed.setArgs(2);
-		Option ae = new Option("ae", "addEmpl", true, "Add an employee to an existing dept");
+		Option ae = new Option("ae", "addEmpl", true,
+				"Add an employee to an existing dept (ex. -ae \"employee inamed\")");
 		ae.setArgs(2);
 		options.addOption("h", "help", false, "show help");
-		options.addOption("nd", "addDept", true, "Add new dept, ex. -nd \"department name\"");
-		options.addOption("rm", "removeDept", true, "Remove an existing dept, ex. -rm \"department id\"");
-		options.addOption("sh", "showDept", false, "Show an existing dept, ex. -sh \"department id\"");
-		options.addOption("fn", "findDept", true, "Find dept by id, ex. -fn \"department id\"");
-		options.addOption("fe", "findEmpl", true, "Find emp by id, ex. -fe \"employee id\"");
-		options.addOption("re", "removeEmp", true, "remove emp by id, ex. -re \"employee id\"");
+		options.addOption("nd", "addDept", true, "Add new dept (ex. -nd \"department name\")");
+		options.addOption("rm", "removeDept", true, "Remove an existing dept (ex. -rm \"department id\")");
+		options.addOption("sh", "showDept", false, "Show an existing dept (ex. -sh \"department id\")");
+		options.addOption("fn", "findDept", true, "Find dept by id (ex. -fn \"department id\")");
+		options.addOption("fe", "findEmpl", true, "Find emp by id (ex. -fe \"employee id\")");
+		options.addOption("re", "removeEmp", true, "remove emp by id (ex. -re \"employee id\")");
 		options.addOption(ed);
 		options.addOption(ae);
 	}
