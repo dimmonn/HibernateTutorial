@@ -27,17 +27,17 @@ public class Cli {
 	public Cli(String[] args) {
 
 		this.args = args;
-		Option ed = new Option("ed", "edit", true, "Edit an existing dept");
+		Option ed = new Option("ed", "editDept", true, "Edit an existing dept");
 		ed.setArgs(2);
-		Option ae = new Option("ae", "edit", true, "Add an employee");
+		Option ae = new Option("ae", "addEmpl", true, "Add an employee to an existing dept");
 		ae.setArgs(2);
 		options.addOption("h", "help", false, "show help.");
-		options.addOption("nd", "add", true, "Add new dept");
-		options.addOption("rm", "remove", true, "Remove an existing dept");
-		options.addOption("sh", "show", false, "Show an existing dept");
-		options.addOption("fn", "finddept", true, "Find dept by id");
-		options.addOption("fe", "findemp", true, "Find emp by id");
-		options.addOption("re", "removeemp", true, "remove emp by id");
+		options.addOption("nd", "addDept", true, "Add new dept");
+		options.addOption("rm", "removeDept", true, "Remove an existing dept");
+		options.addOption("sh", "showDept", false, "Show an existing dept");
+		options.addOption("fn", "findDept", true, "Find dept by id");
+		options.addOption("fe", "findEmpl", true, "Find emp by id");
+		options.addOption("re", "removeEmp", true, "remove emp by id");
 		options.addOption(ed);
 		options.addOption(ae);
 	}
