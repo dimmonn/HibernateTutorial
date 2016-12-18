@@ -7,7 +7,7 @@ Hibernate Simple Tutorial using spring transactions
 2. set up username and a password with privs granted to the dbName
 3. update spring.xml file like below
 
-####	<property name="driverClassName" value="com.mysql.jdbc.Driver" />
+####	```xml<property name="driverClassName" value="com.mysql.jdbc.Driver" />```
 ####	<property name="url" value="jdbc:mysql://ip:3306/dbName" />
 ####	<property name="username" value="root" />
 ####	<property name="password" value="pass" />
