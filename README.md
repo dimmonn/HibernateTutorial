@@ -23,13 +23,13 @@ relations of the tables being updated by this tutorial is below
 
 #####where usage is:
 
-##### usage: Main
-##### -ae,--edit <arg>        Add an employee
-##### -ed,--edit <arg>        Edit an existing dept
-##### -fe,--findemp <arg>     Find emp by id
-##### -fn,--finddept <arg>    Find dept by id
-##### -h,--help               show help.
-##### -nd,--add <arg>         Add new dept
-##### -re,--removeemp <arg>   remove emp by id
-##### -rm,--remove <arg>      Remove an existing dept
-##### -sh,--show              Show an existing dept
+#### usage: Main
+#### -ae,--addEmpl <arg>      Add an employee to an existing dept
+#### -ed,--editDept <arg>     Edit an existing dept
+#### -fe,--findEmpl <arg>     Find emp by id, ex. -fe "employee id"
+#### -fn,--findDept <arg>     Find dept by id, ex. -fn "department id"
+#### -h,--help                show help
+#### -nd,--addDept <arg>      Add new dept, ex. -nd "department name"
+#### -re,--removeEmp <arg>    remove emp by id, ex. -re "employee id"
+#### -rm,--removeDept <arg>   Remove an existing dept, ex. -rm "department id"
+#### -sh,--showDept           Show an existing dept, ex. -sh "department id"
