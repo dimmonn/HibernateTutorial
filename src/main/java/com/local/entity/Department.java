@@ -5,8 +5,12 @@ import java.util.Set;
 
 import javax.persistence.*;
 
+import org.hibernate.annotations.Proxy;
+
 @Entity
 @Table(name = "department")
+@Proxy(lazy = false)
+
 public class Department {
 
     private int departmentId;
