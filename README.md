@@ -12,7 +12,7 @@ Hibernate Simple Tutorial using spring transactions
 ####		<property name="password" value="pass" />
 
 relations of the tables being updated by this tutorial is below
-![img](https://github.com/dimmonn/AlgorythmVisualizer/blob/master/src/main/resources/description.gif)
+![img](https://github.com/dimmonn/HibernateTutorial/blob/master/src/main/resources/dbDiagram.PNG)
 
 # Run
 
