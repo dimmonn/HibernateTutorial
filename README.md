@@ -23,7 +23,7 @@ relations of the tables being updated by this tutorial is below
 
 #####where usage is:
 
-#####usage: Main
+##### usage: Main
 ##### -ae,--addEmpl <arg>      Add an employee to an existing dept (ex. -ae
                           "employee inamed")
 ##### -ed,--editDept <arg>     Edit an existing dept (ex. -ed "department id")
